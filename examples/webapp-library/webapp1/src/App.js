@@ -13,7 +13,7 @@ const App = () => {
 
   useEffect(() => {
     console.log('Calling startApis in webapp1');
-    startApis(parentOrigin).then(({ type, apis }) => {
+    startApis(parentOrigin, (message) => {console.log(message);}).then(({ type, apis }) => {
       console.log(`webapp1 type = ${type}`);
       setCanModPhotos(!!apis.find(api => api === 'Api3'));
       setLoadedType(type);
